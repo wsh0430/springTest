@@ -46,7 +46,7 @@
 	<div>
 		<a href="${ctp}/aop/aopMenu" class="btn btn-info">AOP연습</a>
 	</div>
-	hr/>
+	<hr/>
 	<div>
 		<a href="${ctp}/0307/xmlMenu" class="btn btn-info">XML연습</a>
 	</div>

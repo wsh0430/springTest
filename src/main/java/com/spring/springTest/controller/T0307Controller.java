@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class T0307Controller {
 	
 //@RequestMapping("/0307/test1")
+	@RequestMapping("/xmlMenu")
+	public String xmlMenuGet()	{
+		return "0307/xmlMenu";
+	}
+	
 	@RequestMapping("/test1")
 	public String test1Get()	{
 		return "0307/test01";

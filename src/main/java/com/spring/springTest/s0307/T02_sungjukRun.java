@@ -1,5 +1,10 @@
 package com.spring.springTest.s0307;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring.springTest.vo.SungjukVo;
+
 public class T02_sungjukRun {
 	public static void main(String[] args) {
 		/*
@@ -13,5 +18,29 @@ public class T02_sungjukRun {
 		
 		xml로 만든파일을 스프링컨테이너에 bean으로 등록시켰으면, 호출시는 'getBean("id")', 'getBean("id",클래스)'로 불러서 사용
 		*/
+		/*ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("xml/sungjuk.xml");*/
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("xml/sungjuk.xml");
+		
+		//SungjukVo vo = ctx.getBean("vo1", SungjukVo.class); //적어주면알아서 컨트롤 스페이스로 class임포트됨
+		SungjukVo vo = (SungjukVo) ctx.getBean("vo1"); //윗줄꺼 이렇게 써도 됨(강제타입변환)
+		System.out.println("name : " + vo.getName());
+		System.out.println("kor : " + vo.getKor());
+		System.out.println("eng: " + vo.getEng());
+		System.out.println("mat: " + vo.getMat());
+		System.out.println();
+		
+		vo = ctx.getBean("vo2", SungjukVo.class);
+		System.out.println("name : " + vo.getName());
+		System.out.println("kor : " + vo.getKor());
+		System.out.println("eng: " + vo.getEng());
+		System.out.println("mat: " + vo.getMat());
+		System.out.println();
+		
+		vo = ctx.getBean("vo3", SungjukVo.class);
+		System.out.println("name : " + vo.getName());
+		System.out.println("kor : " + vo.getKor());
+		System.out.println("eng: " + vo.getEng());
+		System.out.println("mat: " + vo.getMat());
+		System.out.println();
 	}
 }
